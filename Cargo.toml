@@ -1,0 +1,17 @@
+[package]
+name = "x_util"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.36.0", default-features = false }
+futures-util = { version = "0.3.30", optional = true }
+pin-project = "1"
+
+[features]
+default = ["timeout", "futures-util"]
+timeout = ["tokio/time"]
+
+[dev-dependencies]
+tokio = { verion = "1.36.0", features = ["full"] }
+color-eyre = "0.6.2"
